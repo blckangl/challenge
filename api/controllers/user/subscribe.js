@@ -62,7 +62,7 @@ module.exports = {
       let IF_SUBSCRIBED_SQL = `
 SELECT count(*)
 FROM subscriptions
-WHERE subscriber = $1 AND subscriptions.to = $2`;
+WHERE subscriber = $1 AND subscriptions.to = $2 `;
 
       let rawResult = await sails.sendNativeQuery(IF_SUBSCRIBED_SQL, [subscriber.id, subscribedTo.id]);
 
